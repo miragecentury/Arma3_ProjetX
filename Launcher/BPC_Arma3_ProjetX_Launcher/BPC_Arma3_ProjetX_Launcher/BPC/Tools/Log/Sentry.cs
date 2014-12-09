@@ -8,5 +8,6 @@ namespace BPC_Arma3_ProjetX_Launcher.BPC.Tools.Log
 {
     class Sentry
     {
+        
     }
 }

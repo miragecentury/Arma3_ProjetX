@@ -129,7 +129,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="BPC\Arma3\Config\" />
+    <Folder Include="BPC\ProjetX\Arma3Link\" />
+    <Folder Include="BPC\ProjetX\WampLink\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
