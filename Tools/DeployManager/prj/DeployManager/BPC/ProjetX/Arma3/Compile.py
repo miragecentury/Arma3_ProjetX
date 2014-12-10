@@ -9,14 +9,27 @@ from BPC.ProjetX.Service import Global_Logger
 
 
 class AddonBuilder():
-    def __init__(self, pathToExe=None):
+    """
+        .. py::class:: AddonBuilder
+    """
 
+    def __init__(self, pathToExe=None):
+        """
+        .. py::method:: AddonBuilder.AddonBuilder(pathToExe)
+        :param pathToExe:
+        :return:
+        """
         self.pathToExe = pathToExe
         self.pathToSign = None
         self.pathToTmp = None
         self.checkInit()
 
     def checkInit(self):
+        """
+        .. py::method:: AddonBuilder.checkInit()
+
+        :return:
+        """
         if self.pathToExe is None:
             self.findAddonBuilderExe()
 
