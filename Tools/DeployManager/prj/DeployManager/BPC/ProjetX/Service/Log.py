@@ -6,7 +6,6 @@ from raven.handlers.logging import SentryHandler
 from raven.conf import setup_logging
 from raven import Client
 
-
 class Logger():
     def __init__(self):
         self.client = Client(

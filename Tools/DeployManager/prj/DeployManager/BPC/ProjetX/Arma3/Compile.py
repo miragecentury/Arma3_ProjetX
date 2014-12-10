@@ -5,6 +5,7 @@ import winreg
 
 from BPC.ProjetX.Arma3 import AddonBuilderRegistryKey
 from BPC.ProjetX.Arma3 import AddonBuilderToolsExe
+from BPC.ProjetX.Service import Global_Logger
 
 
 class AddonBuilder():
@@ -26,7 +27,7 @@ class AddonBuilder():
             key = winreg.OpenKey(areg, AddonBuilderRegistryKey.Arma3Tools)
             self.pathToExe = winreg.QueryValueEx(key, "path")[0]
         except Exception:
-            print("ERROR")
+            Global_Logger.getClient().captureException()
 
     def setTmp(self, pathToTmp):
         self.pathToTmp = pathToTmp
@@ -44,6 +45,9 @@ class AddonBuilder():
                 exe = exe + " -include=\"" + include + "\""
             if self.pathToTmp is not None:
                 exe = exe + " -tmp=\"" + self.pathToTmp + "\""
-            subprocess.call(exe)
+            try:
+                subprocess.call(exe)
+            except Exception:
+                Global_Logger.getClient().captureException()
         else:
-            print("ERROR")
+            Global_Logger.getLogger().error("PathToExe = None")
