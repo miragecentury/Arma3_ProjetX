@@ -13,9 +13,7 @@ class AddonBuilder():
         self.pathToExe = pathToExe
         self.pathToSign = None
         self.pathToTmp = None
-
         self.checkInit()
-
 
     def checkInit(self):
         if self.pathToExe is None:
@@ -28,7 +26,7 @@ class AddonBuilder():
             key = winreg.OpenKey(areg, AddonBuilderRegistryKey.Arma3Tools)
             self.pathToExe = winreg.QueryValueEx(key, "path")[0]
         except Exception:
-            None
+            print("ERROR")
 
     def setTmp(self, pathToTmp):
         self.pathToTmp = pathToTmp
@@ -46,7 +44,6 @@ class AddonBuilder():
                 exe = exe + " -include=\"" + include + "\""
             if self.pathToTmp is not None:
                 exe = exe + " -tmp=\"" + self.pathToTmp + "\""
-            print(exe)
             subprocess.call(exe)
         else:
             print("ERROR")
