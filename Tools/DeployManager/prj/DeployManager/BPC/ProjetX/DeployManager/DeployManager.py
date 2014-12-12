@@ -4,7 +4,7 @@ import sys
 from PySide import QtGui
 
 from BPC.ProjetX.Service.Log import Logger
-from BPC.ProjetX.DeployManager.MainWindow import Ui_MainWindow
+from BPC.ProjetX.DeployManager.Ui_MainWindow import Ui_MainWindow
 
 
 class DeployManager():
